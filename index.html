@@ -83,6 +83,28 @@
         <textarea rows="10" cols="110"></textarea><br>
         <input type=reset valu="取り消し">
       </form>
+      <form data-persist="garlic" method="POST">
+      <p>10(大きめ)</p>
+        <input size="50"><br>
+        <textarea rows="100" cols="110" id="copyTar"></textarea><br>
+        <input type=reset valu="取り消し">
+        <input onclick="copy" value="copy">
+        <script>
+        function copy() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copyTar");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+        }
+    </script>
+      </form>
     </form>
     <script src="jquery-1.8.2.min.js"></script>
     <script src="garlic.js"></script>
